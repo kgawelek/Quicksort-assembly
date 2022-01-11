@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\konga\\source\\repos\\Quicksort\\Quicksort\\Quicksort.csproj": {}
+    "D:\\studia\\JA\\Quicksort-assembly\\Quicksort\\Quicksort.csproj": {}
   },
   "projects": {
-    "C:\\Users\\konga\\source\\repos\\Quicksort\\Quicksort\\Quicksort.csproj": {
+    "D:\\studia\\JA\\Quicksort-assembly\\Quicksort\\Quicksort.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\konga\\source\\repos\\Quicksort\\Quicksort\\Quicksort.csproj",
+        "projectUniqueName": "D:\\studia\\JA\\Quicksort-assembly\\Quicksort\\Quicksort.csproj",
         "projectName": "Quicksort",
-        "projectPath": "C:\\Users\\konga\\source\\repos\\Quicksort\\Quicksort\\Quicksort.csproj",
+        "projectPath": "D:\\studia\\JA\\Quicksort-assembly\\Quicksort\\Quicksort.csproj",
         "packagesPath": "C:\\Users\\konga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\konga\\source\\repos\\Quicksort\\Quicksort\\obj\\",
+        "outputPath": "D:\\studia\\JA\\Quicksort-assembly\\Quicksort\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

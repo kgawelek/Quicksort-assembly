@@ -9,8 +9,8 @@ extern "C" {
         *b = t;
     }
 
-    Quicksort int partition(int arr[], int low, int high)
-    {
+	Quicksort int quicksort(int arr[], int low, int high)
+	{
         int pivot = arr[high];    // pivot
         int i = (low - 1);  // Index of smaller element
 
@@ -26,21 +26,6 @@ extern "C" {
         }
         swap(&arr[i + 1], &arr[high]);
         return (i + 1);
-    }
-
-	Quicksort void quicksort(int arr[], int low, int high)
-	{
-        if (low < high)
-        {
-            /* pi is partitioning index, arr[p] is now
-               at right place */
-            int pi = partition(arr, low, high);
-
-            // Separately sort elements before
-            // partition and after partition
-            quicksort(arr, low, pi - 1);
-            quicksort(arr, pi + 1, high);
-        }
 	}
 
     

@@ -24,17 +24,19 @@ namespace Quicksort
         public MainWindow()
         {
             InitializeComponent();
-            sorter = new Sorter(@"C:\Users\konga\source\repos\Quicksort\data.txt");
+            sorter = new Sorter(@"D:\studia\JA\Quicksort-assembly\data.txt");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             sorter.sortAsm();
+            MessageBox.Show(sorter.getDuration().ToString());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             sorter.sortCpp();
+            MessageBox.Show(sorter.getDuration().ToString());
         }
     }
 }
