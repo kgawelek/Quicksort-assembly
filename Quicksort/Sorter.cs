@@ -7,10 +7,11 @@ using System.Text;
 
 namespace Quicksort
 {
-    unsafe class Sorter
+     class Sorter
     {
         string fileName;
         int [] numbersToSort;
+        double duration;
 
         public Sorter()
         {
@@ -37,6 +38,16 @@ namespace Quicksort
             
         }
 
+        public async void saveData()
+        {
+            String line = "";
+            for (int i = 0; i < numbersToSort.Length; i++)
+            {
+                line += numbersToSort[i] + " ";
+            }
+           await File.WriteAllTextAsync(@"C:\Users\konga\source\repos\Quicksort\output.txt", line);
+        }
+
         public void printArr()
         {
             for (int i = 0; i < numbersToSort.Length; i++)
@@ -48,9 +59,19 @@ namespace Quicksort
         public unsafe void sortAsm()
         {
             readData();
-            printArr();
+            //printArr();
+
+            int start, stop;
+            start = Environment.TickCount & Int32.MaxValue;
+
             quicksortForAsm(numbersToSort, 0, numbersToSort.Length - 1);
-            printArr();
+
+            stop = Environment.TickCount & Int32.MaxValue;
+            duration = stop - start;
+
+            //printArr();
+            Debug.WriteLine(duration);
+            saveData();
 
         }
 
@@ -84,10 +105,19 @@ namespace Quicksort
         public void sortCpp()
         {
             readData();
-            printArr();
-            quicksort(numbersToSort, 0, numbersToSort.Length - 1);
-            printArr();
+            //printArr();
 
+            int start, stop;
+            start = Environment.TickCount & Int32.MaxValue;
+
+            quicksort(numbersToSort, 0, numbersToSort.Length - 1);
+
+            stop = Environment.TickCount & Int32.MaxValue;
+            duration = stop - start;
+
+            //printArr();
+            Debug.WriteLine(duration);
+            saveData();
         }
     }
 }
