@@ -5,10 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quicksort"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode ="CanMinimize"
+        Title="Quicksort" Height="450" Width="800">
     <Grid>
-        <Button Content="Assembly" HorizontalAlignment="Left" Margin="175,309,0,0" VerticalAlignment="Top" Height="35" Width="120" Click="Button_Click"/>
-        <Button Content="C++" HorizontalAlignment="Right" Margin="0,309,175,0" VerticalAlignment="Top" Height="35" Width="120" Click="Button_Click_1"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF3D838D" Offset="0.96"/>
+                <GradientStop Color="#FFDFFBFF" Offset="0.093"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Asembler" HorizontalAlignment="Left" Margin="165,195,0,0" VerticalAlignment="Top" Height="35" Width="160" Click="Button_Click" Background="#FFD9DEE0"/>
+        <Button Content="C++" HorizontalAlignment="Right" Margin="0,195,165,0" VerticalAlignment="Top" Height="35" Width="160" Click="Button_Click_1" Background="#FFD9DEE0" Foreground="Black"/>
+        <Label Content="Quicksort" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top" Height="71" Width="200" HorizontalContentAlignment="Center" FontSize="36"/>
+        <Label Content="Ostatni czas:" HorizontalAlignment="Left" Margin="165,265,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFD9DEE0"/>
+        <Label Content="Ostatni czas:" HorizontalAlignment="Right" Margin="0,265,240,0" VerticalAlignment="Top" Width="90" Foreground="#FFC7DAE0"/>
+        <Label x:Name="asmTime" Content="" HorizontalAlignment="Left" Margin="250,265,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.263,0.002" Width="120" Foreground="#FFD9DEE0" />
+        <Label x:Name="cppTime" Content="" HorizontalAlignment="Left" Margin="570,265,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.263,0.002" Width="120" Foreground="#FFD9DEE0"/>
+        <Button Content="Wybierz plik wejściowy" HorizontalAlignment="Left" Margin="165,325,0,0"  Height="35" Width="160" Click="Button_Click_2" RenderTransformOrigin="0.485,0.168" Background="#FFD9DEE0" VerticalAlignment="Top"/>
+        <Button Content="Wybierz plik wyjściowy" HorizontalAlignment="Right" Margin="0,325,165,0" Background="#FFD9DEE0"  Height="35" Width="160" Click="Button_Click_3" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

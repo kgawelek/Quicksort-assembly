@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -10,18 +11,30 @@ namespace Quicksort
      class Sorter
     {
         string fileName;
+        string outputFileName;
         int [] numbersToSort;
-        double duration;
+        Stopwatch duration;
 
         public Sorter()
         {
 
         }
 
-        public Sorter(string fileName)
+        public Sorter(string fileName, string outputFileName)
         {
             this.fileName = fileName;
+            this.outputFileName = outputFileName;
             
+        }
+
+        public void setFileName(string fileName)
+        {
+            this.fileName = fileName;
+        }
+
+        public void setOutputFileName(string fileName)
+        {
+            this.outputFileName = fileName;
         }
 
         public void readData()
@@ -31,13 +44,14 @@ namespace Quicksort
             numbersToSort = new int[bits.Length];
             for(int i = 0; i < bits.Length; i++)
             {
-                numbersToSort[i] = int.Parse(bits[i]);
+                if (!(bits[i].Any(c => c < '0' || c > '9') || bits[i] == null || bits[i] == ""))
+                    numbersToSort[i] = int.Parse(bits[i]);
             }
             
             
         }
 
-        public double getDuration()
+        public Stopwatch getDuration()
         {
             return duration;
         }
@@ -49,7 +63,7 @@ namespace Quicksort
             {
                 line += numbersToSort[i] + " ";
             }
-           await File.WriteAllTextAsync(@"D:\studia\JA\Quicksort-assembly\output.txt", line);
+           await File.WriteAllTextAsync(outputFileName, line);
         }
 
         public void printArr()
@@ -63,18 +77,10 @@ namespace Quicksort
         public void sortAsm()
         {
             readData();
-            //printArr();
 
-            int start, stop;
-            start = Environment.TickCount & Int32.MaxValue;
-
+            duration = Stopwatch.StartNew();
             quicksortForAsm(numbersToSort, 0, numbersToSort.Length - 1);
-
-            stop = Environment.TickCount & Int32.MaxValue;
-            duration = stop - start;
-
-            //printArr();
-            //Debug.WriteLine(duration);
+            duration.Stop();
             
             saveData();
 
@@ -102,18 +108,11 @@ namespace Quicksort
         public void sortCpp()
         {
             readData();
-            //printArr();
 
-            int start, stop;
-            start = Environment.TickCount & Int32.MaxValue;
-
+            duration = Stopwatch.StartNew();
             quicksortForCpp(numbersToSort, 0, numbersToSort.Length - 1);
+            duration.Stop();
 
-            stop = Environment.TickCount & Int32.MaxValue;
-            duration = stop - start;
-
-            //printArr();
-            //Debug.WriteLine(duration);
             saveData();
         }
 
