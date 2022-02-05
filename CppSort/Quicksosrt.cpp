@@ -1,14 +1,17 @@
 #define Quicksort _declspec(dllexport)
 
 extern "C" {
-
+    /**
+    * Function swaps to elements
+    */
     Quicksort void swap(int* a, int* b)
     {
         int t = *a;
         *a = *b;
         *b = t;
     }
-
+    
+    
 	Quicksort int quicksort(int arr[], int low, int high)
 	{
         int pivot = arr[high];    // pivot

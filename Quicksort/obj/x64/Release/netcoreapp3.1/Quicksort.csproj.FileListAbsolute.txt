@@ -16,3 +16,4 @@ D:\studia\JA\Quicksort-assembly\Quicksort\obj\x64\Release\netcoreapp3.1\Quicksor
 D:\studia\JA\Quicksort-assembly\Quicksort\obj\x64\Release\netcoreapp3.1\Quicksort.dll
 D:\studia\JA\Quicksort-assembly\Quicksort\obj\x64\Release\netcoreapp3.1\Quicksort.pdb
 D:\studia\JA\Quicksort-assembly\Quicksort\obj\x64\Release\netcoreapp3.1\Quicksort.genruntimeconfig.cache
+D:\studia\JA\Quicksort-assembly\Quicksort\obj\x64\Release\netcoreapp3.1\Quicksort.csproj.AssemblyReference.cache

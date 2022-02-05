@@ -24,19 +24,38 @@ namespace Quicksort
         public MainWindow()
         {
             InitializeComponent();
-            sorter = new Sorter(@"D:\studia\JA\Quicksort-assembly\data.txt", @"D:\studia\JA\Quicksort-assembly\output.txt");
+            sorter = new Sorter();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {   if (sorter.getFileName() == null || sorter.getOutputFileName() == null)
+            {
+                MessageBox.Show("Wybierz plik wejsciowy i wyjsciowy!");
+                return;
+            }
+                
             sorter.sortAsm();
-            asmTime.Content = sorter.getDuration().ElapsedMilliseconds.ToString() + " sekund";
+
+            if (sorter.getDuration().ElapsedMilliseconds == 0)
+                asmTime.Content = (sorter.getDuration().Elapsed.TotalMilliseconds * 1000000).ToString() + " ns";
+            else
+                asmTime.Content = sorter.getDuration().ElapsedMilliseconds.ToString() + " ms";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (sorter.getFileName() == null || sorter.getOutputFileName() == null)
+            {
+                MessageBox.Show("Wybierz plik wejsciowy i wyjsciowy!");
+                return;
+            }
             sorter.sortCpp();
-            cppTime.Content = sorter.getDuration().ElapsedMilliseconds.ToString() + " sekund";
+
+            if (sorter.getDuration().ElapsedMilliseconds == 0)
+                cppTime.Content = (sorter.getDuration().Elapsed.TotalMilliseconds * 1000000).ToString() + " ns";
+            else
+                cppTime.Content = sorter.getDuration().ElapsedMilliseconds.ToString() + " ms";
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

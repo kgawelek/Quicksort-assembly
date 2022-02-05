@@ -37,6 +37,16 @@ namespace Quicksort
             this.outputFileName = fileName;
         }
 
+        public string getFileName()
+        {
+            return fileName;
+        }
+
+        public string getOutputFileName()
+        {
+            return outputFileName;
+        }
+
         public void readData()
         {
 
